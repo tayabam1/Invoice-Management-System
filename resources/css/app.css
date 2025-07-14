@@ -1,0 +1,449 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+/* FilePond Custom Styling */
+.filepond-wrapper .filepond--root {
+  margin-bottom: 0;
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+.filepond-wrapper .filepond--drop-label {
+  color: rgb(75 85 99);
+}
+
+.dark .filepond-wrapper .filepond--drop-label {
+  color: rgb(209 213 219);
+}
+
+.filepond-wrapper .filepond--panel-root {
+  background: white;
+  border: 2px dashed rgb(209 213 219);
+  border-radius: 0.5rem;
+}
+
+.dark .filepond-wrapper .filepond--panel-root {
+  background: rgb(31 41 55);
+  border-color: rgb(75 85 99);
+}
+
+.filepond-wrapper .filepond--drip {
+  background: rgb(59 130 246);
+  opacity: 0.1;
+}
+
+.filepond-wrapper .filepond--item {
+  width: calc(50% - 0.5em);
+}
+
+.filepond-wrapper .filepond--image-preview-wrapper {
+  background: rgb(249 250 251);
+}
+
+.dark .filepond-wrapper .filepond--image-preview-wrapper {
+  background: rgb(17 24 39);
+}
+
+.filepond-wrapper .filepond--file-status-main {
+  color: rgb(75 85 99);
+}
+
+.dark .filepond-wrapper .filepond--file-status-main {
+  color: rgb(209 213 219);
+}
+
+.filepond-wrapper .filepond--file-status-sub {
+  color: rgb(107 114 128);
+}
+
+.dark .filepond-wrapper .filepond--file-status-sub {
+  color: rgb(156 163 175);
+}
+
+/* Invoice theme colors for FilePond */
+.filepond-wrapper .filepond--file-action-button {
+  background: linear-gradient(to right, rgb(37 99 235), rgb(147 51 234));
+}
+
+.filepond-wrapper .filepond--file-action-button:hover {
+  background: linear-gradient(to right, rgb(29 78 216), rgb(126 34 206));
+}
+
+.filepond-wrapper .filepond--progress-indicator {
+  background: linear-gradient(to right, rgb(37 99 235), rgb(147 51 234));
+}
+
+/* Compact FilePond Styling */
+.filepond-compact {
+  width: 160px;
+  height: 160px;
+  display: inline-block;
+}
+
+.filepond-compact .filepond--root {
+  width: 160px;
+  height: 160px;
+}
+
+.filepond-compact .filepond--drop-label {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  line-height: 1.2;
+}
+
+.filepond-compact .filepond--panel-root {
+  width: 160px;
+  height: 160px;
+  border-radius: 0.25rem;
+  border: 2px dashed rgb(147 51 234);
+  background: linear-gradient(135deg, rgb(249 250 251) 0%, rgb(243 244 246) 100%);
+  transition: all 0.3s ease;
+}
+
+.dark .filepond-compact .filepond--panel-root {
+  background: linear-gradient(135deg, rgb(31 41 55) 0%, rgb(17 24 39) 100%);
+  border-color: rgb(147 51 234);
+}
+
+.filepond-compact .filepond--panel-root:hover {
+  border-color: rgb(126 34 206);
+  background: linear-gradient(135deg, rgb(243 244 246) 0%, rgb(229 231 235) 100%);
+  transform: translateY(-1px);
+}
+
+.dark .filepond-compact .filepond--panel-root:hover {
+  background: linear-gradient(135deg, rgb(17 24 39) 0%, rgb(31 41 55) 100%);
+}
+
+.filepond-compact .filepond--item {
+  width: 100%;
+  margin: 0;
+}
+
+.filepond-compact .filepond--image-preview-wrapper {
+  border-radius: 0.25rem;
+}
+
+.filepond-compact .filepond--file-action-button {
+  width: 28px;
+  height: 28px;
+  background: rgba(37, 99, 235, 0.9);
+  border-radius: 50%;
+}
+
+.filepond-compact .filepond--file-action-button:hover {
+  background: rgba(29, 78, 216, 1);
+}
+
+.filepond-compact-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(107 114 128);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.filepond-compact-label::before {
+  content: "📁";
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+/* Empty state styling for compact mode */
+.filepond-compact .filepond--drop-label {
+  cursor: pointer;
+  border: 2px dashed transparent;
+  transition: all 0.3s ease;
+}
+
+.filepond-compact .filepond--drop-label:hover {
+  background: rgba(147, 51, 234, 0.05);
+}
+
+/* File info and status hiding for compact mode */
+.filepond-compact .filepond--file-status {
+  display: none;
+}
+
+.filepond-compact .filepond--file-info {
+  display: none;
+}
+
+/* Hide default FilePond delete/remove buttons */
+.filepond-compact .filepond--file-action-button {
+  display: none !important;
+}
+
+.filepond-compact .filepond--action-remove-item {
+  display: none !important;
+}
+
+.filepond-compact .filepond--action-abort-item-load {
+  display: none !important;
+}
+
+.filepond-compact .filepond--action-retry-item-load {
+  display: none !important;
+}
+
+.filepond-compact .filepond--action-abort-item-processing {
+  display: none !important;
+}
+
+.filepond-compact .filepond--action-retry-item-processing {
+  display: none !important;
+}
+
+.filepond-compact .filepond--action-process-item {
+  display: none !important;
+}
+
+/* Hide PQINA branding/watermark */
+.filepond--credits {
+  display: none !important;
+}
+
+.filepond--root .filepond--credits {
+  display: none !important;
+}
+
+/* Hide any potential PQINA text or links */
+a[href*="pqina"] {
+  display: none !important;
+}
+
+[class*="pqina"] {
+  display: none !important;
+}
+
+/* Hide any text containing PQINA */
+*:contains("PQINA") {
+  display: none !important;
+}
+
+*:contains("Powered by") {
+  display: none !important;
+}
+
+/* Additional FilePond branding hiding */
+.filepond--assistant {
+  display: none !important;
+}
+
+.filepond--browser.filepond--browser {
+  display: none !important;
+}
+
+/* Compact delete button styling */
+.filepond-compact .absolute {
+  z-index: 20;
+}
+
+.filepond-compact button[title="Delete file"] {
+  background: rgba(220, 38, 38, 0.9);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.filepond-compact button[title="Delete file"]:hover {
+  background: rgba(185, 28, 28, 0.95);
+  transform: scale(1.1);
+}
+
+/* Compact FilePond with existing file styling */
+.filepond-compact .filepond--item-panel {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.filepond-compact .filepond--image-preview {
+  border-radius: 0.25rem;
+  width: 160px;
+  height: 160px;
+}
+
+.filepond-compact .filepond--image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.filepond-compact .filepond--file-status {
+  display: none;
+}
+
+.filepond-compact .filepond--file-info {
+  display: none;
+}
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.87 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.87 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.269 0 0);
+    --ring: oklch(0.439 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.985 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.269 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
